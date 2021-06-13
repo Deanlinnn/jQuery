@@ -26,25 +26,25 @@
                     <td>
                         <input type="checkbox">
                     </td>
-                    <td>Elon Musk</td>
+                    <td>Mark Zuckerberg</td>
                     <td>0912345678</td>
-                    <td>ElonMusk@gmail.com</td>
+                    <td>MarkZuckerberg@gmail.com</td>
                 </tr>
                 <tr>
                     <td>
                         <input type="checkbox">
                     </td>
-                    <td>Elon Musk</td>
+                    <td>Bill Gates</td>
                     <td>0912345678</td>
-                    <td>ElonMusk@gmail.com</td>
+                    <td>BillGates@gmail.com</td>
                 </tr>
                 <tr>
                     <td>
                         <input type="checkbox">
                     </td>
-                    <td>Elon Musk</td>
+                    <td>Larry Page</td>
                     <td>0912345678</td>
-                    <td>ElonMusk@gmail.com</td>
+                    <td>LarryPage@gmail.com</td>
                 </tr>
             </table>
         </div>
@@ -56,7 +56,11 @@
     <script>
         $('input').click(function () {
             console.log('hi', $(this));
+            $(this).parent().parent().css('background', 'lightblue');
         });
+        // $('input').click(function () {
+        //     $(this).parent().parent().css('background', 'white');
+        // });
     </script>
 </body>
 

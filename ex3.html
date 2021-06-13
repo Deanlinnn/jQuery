@@ -34,8 +34,11 @@
     <script>
         $('img').click(function () {
             console.log('hi', $(this));
-            $(this).css('', '');
+            $('img').css('border', '5px solid white');
+            // $('img').css('border', 'none');
+            $(this).css('border', '5px solid red');
         });
+
     </script>
 </body>
 
