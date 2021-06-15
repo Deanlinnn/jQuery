@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .img-wrap {
+            width: 4000px;
+            /* height: 100%; */
+            display: flex;
+            transform: translateX(-800px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-dots {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .slider-dots li {
+            width: 40px;
+            height: 10px;
+            border: 2px solid #fff;
+            margin: 0 4px;
+        }
+
+        .left-arrow-area,
+        .right-arrow-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            background-color: rgba(170, 255, 170, 0.281);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .right-arrow-area {
+            right: 0;
+        }
+
+        .fas {
+            color: red;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="img-wrap list-unstyled">
+            <li>
+                <img src="./imgs/slide1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide5.jpg" alt="">
+            </li>
+        </ul>
+
+        <ul class="list-unstyled slider-dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="left-arrow-area">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="right-arrow-area">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        let nowPage = 0;
+
+        $('.slider-dots li').hover(function () {
+            console.log('hi');
+            console.log('li index:', $(this).index() * -800 + 'px');
+            const positionX = $(this).index() * -800;
+            $(this).css('background', '#fff').siblings().css('background', 'transparent');
+
+            $('.img-wrap').css('transform', 'translateX(' + positionX + 'px)');
+            $('.img-wrap').css('transform', `translateX(${positionX}px)`);
+            // 樣板字串
+        });
+        $('.left-arrow-area').click(function () {
+            console.log('left-arrow-area clicked');
+            nowPage = nowPage - 1;
+            console.log('nowPage', nowPage);
+
+            const positionX = nowPage * -800;
+            $('.img-wrap').css('transform', `translateX(${positionX}px)`);
+        });
+        $('.right-arrow-area').click(function () {
+            console.log('right-arrow-area clicked');
+            nowPage = nowPage + 1;
+            console.log('nowPage', nowPage);
+
+            const positionX = nowPage * -800;
+            $('.img-wrap').css('transform', `translateX(${positionX}px)`);
+        });
+    </script>
+</body>
+
+</html>

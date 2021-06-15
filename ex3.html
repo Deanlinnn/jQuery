@@ -13,6 +13,7 @@
         img {
             width: 100%;
             border-radius: 50%;
+            border: 3px solid white;
         }
     </style>
 </head>
@@ -32,11 +33,14 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script>
+        // $('img').click(function () {
+        //     console.log('hi', $(this));
+        //     $('img').css('border', '5px solid white');
+        //     $(this).css('border', '5px solid red');
+        // });
         $('img').click(function () {
             console.log('hi', $(this));
-            $('img').css('border', '5px solid white');
-            // $('img').css('border', 'none');
-            $(this).css('border', '5px solid red');
+            $(this).css('border', '3px solid red').parent().siblings().children().css('border', '3px solid white');
         });
 
     </script>
