@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .fontS{
+            font-size: .8rem;
+        }
+        .fontM{
+            font-size: 1rem;
+        }
+        .fontL{
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-end mt-3">
+            <div class="btn-group">
+                <button class="btn-s btn btn-info">S</button>
+                <button class="btn-m btn btn-info active">M</button>
+                <button class="btn-l btn btn-info">L</button>
+            </div>
+        </div>
+
+        <h2>jQuery</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis itaque natus fuga sint totam doloremque nihil quaerat, eius nam sit quas debitis, obcaecati eligendi consequatur veritatis. Quisquam, itaque ducimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis itaque natus fuga sint totam doloremque nihil quaerat, eius nam sit quas debitis, obcaecati eligendi consequatur veritatis. Quisquam, itaque ducimus.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $('.btn-s').click(function (){
+            console.log('hi');
+            $('p').addClass('fontS');
+            $('p').removeClass('fontM');
+            $('p').removeClass('fontL');
+            $('.btn').removeClass('active');
+            
+        });    
+        $('.btn-m').click(function (){
+            console.log('hi');
+            $('p').addClass('fontM');
+            $('p').removeClass('fontS');
+            $('p').removeClass('fontL');
+        });    
+        $('.btn-l').click(function (){
+            console.log('hi');
+            $('p').removeClass().addClass('fontL');
+        });    
+    </script>
+</body>
+</html>
